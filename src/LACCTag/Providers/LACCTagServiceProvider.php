@@ -13,6 +13,7 @@ namespace LACCPress\LACCTag\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+
 class LACCTagServiceProvider extends ServiceProvider
 {
 		public function boot()
