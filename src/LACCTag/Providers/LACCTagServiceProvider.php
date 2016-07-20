@@ -13,12 +13,13 @@ namespace LACCPress\LACCTag\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-
 class LACCTagServiceProvider extends ServiceProvider
 {
 		public function boot()
 		{
 				$this->publishes( [ __DIR__ . '/../../resources/migrations/' => base_path( 'database/migrations' ) ], 'migrations' );
+				$this->loadViewsFrom( __DIR__ . '/../../resources/views/lacctag/', 'lacctag' );
+				require_once __DIR__ . '/../routes.php';
 		}
 
 		public function register()
