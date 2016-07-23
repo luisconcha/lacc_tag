@@ -28,6 +28,44 @@ class AdminTagsController extends Controller
 
 		public function index()
 		{
-				return $this->response->view( 'lacctag::index' );
+				$listTags = $this->tag->all();
+
+				return $this->response->view( 'lacctag::index', compact( 'listTags' ) );
 		}
+
+		public function create()
+		{
+				return $this->response->view( 'lacctag::create' );
+		}
+
+		public function store( Request $request )
+		{
+				$this->tag->create( $request->all() );
+
+				return redirect()->route( 'admin.tags.index' );
+		}
+
+		public function edit( $id )
+		{
+				$tag = $this->tag->find( $id );
+
+				return $this->response->view( 'lacctag::edit', compact( 'tag' ) );
+		}
+
+		public function update( Request $request, $id )
+		{
+				$tagId = $id;
+				$input = $request->all();
+				$this->tag->find( $tagId )->update( $input );
+
+				return redirect()->route( 'admin.tags.index' );
+		}
+
+		public function destroy( $id )
+		{
+				$this->tag->find( $id )->delete();
+
+				return redirect()->route( 'admin.tags.index' );
+		}
+
 }
