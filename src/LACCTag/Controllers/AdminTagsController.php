@@ -11,10 +11,23 @@
  */
 namespace LACCPress\LACCTag\Controllers;
 
+use Illuminate\Contracts\Routing\ResponseFactory;
+use Illuminate\Http\Request;
+use LACCPress\LACCTag\Models\Tag;
+
 class AdminTagsController extends Controller
 {
+		private $tag;
+		private $response;
+
+		public function __construct( ResponseFactory $response, Tag $tag )
+		{
+				$this->tag      = $tag;
+				$this->response = $response;
+		}
+
 		public function index()
 		{
-				return view( 'lacctag::index' );
+				return $this->response->view( 'lacctag::index' );
 		}
 }

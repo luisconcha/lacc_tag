@@ -1,6 +1,6 @@
 <?php
 /**
- * File: AbstractCaseTest.php
+ * File: AbstractTestCase.php
  * Created by: Luis Alberto Concha Curay.
  * Email: luisconchacuray@gmail.com
  * Language: PHP
@@ -13,7 +13,7 @@ namespace LACCPress\LACCTag\Tests;
 
 use Orchestra\Testbench\TestCase;
 
-abstract class AbstractCaseTest extends TestCase
+abstract class AbstractTestCase extends TestCase
 {
 		public function migrate()
 		{

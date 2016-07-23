@@ -12,9 +12,9 @@
 namespace LACCPress\LACCTag\Tests\Models;
 
 use LACCPress\LACCTag\Models\Tag;
-use LACCPress\LACCTag\Tests\AbstractCaseTest;
+use LACCPress\LACCTag\Tests\AbstractTestCase;
 
-class TagTest extends AbstractCaseTest
+class TagTest extends AbstractTestCase
 {
 		public function setUp()
 		{
